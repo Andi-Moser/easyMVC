@@ -1,3 +1,21 @@
+- [easyMVC](#easymvc)
+  * [Requirements](#requirements)
+  * [Components](#components)
+    + [Controller](#controller)
+    + [Actions](#actions)
+    + [Views](#views)
+    + [Models](#models)
+      - [Configure the database access](#configure-the-database-access)
+      - [Model Helpers](#model-helpers)
+        * [getAll(query)](#getall-query-)
+  * [How to call an action](#how-to-call-an-action)
+    + [By Parameter](#by-parameter)
+    + [By Route](#by-route)
+      - [Advanced Routes](#advanced-routes)
+  * [More Features](#more-features)
+    + [Redirects](#redirects)
+- [Contributors](#contributors)
+
 # easyMVC
 
 EasyMVC is a simple MVC framework used for teaching MVC principles.
@@ -59,9 +77,33 @@ _/view/demo/test.php_
 
 ### Models
 
-Model classes are not yet implemented.
+Model classes are saved within the _model_ direcotry. All models have to extend the BaseModel class.
 
-They will, however all extend a simple base model class which will provide a MySQLi connection to the database.
+They allow the access the _mysqli_ instance:
+```php
+public class Item extends BaseModel {
+    public function demoMethod() {
+        $mysqli = $this->connection;    
+    }
+}
+```
+
+#### Configure the database access
+
+Rename the _database_template.xml_ to _database.xml_ and add the connection data for your
+mysql server.
+
+#### Model Helpers
+
+The following helper methods are implemented in the base model for a faster development.
+
+##### getAll(query)
+```php
+public function getItems() {
+    return $this->getAll("SELECT * FROM my_table");
+}
+```
+Returns an associative array with all results from the query.
 
 ## How to call an action
 
