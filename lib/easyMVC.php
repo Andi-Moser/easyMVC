@@ -22,7 +22,7 @@ class easyMVC
                     }
                     else {
                         // determine view file
-                        $viewFile = __DIR__ . DS . "view" . DS . $controllerFolder . DS . $actionFile . ".php";
+                        $viewFile = __DIR__ .DS . ".." . DS . "view" . DS . $controllerFolder . DS . $actionFile . ".php";
                         if (file_exists($viewFile)) {
                             // get output from view
                             $output = self::renderWithParams($viewFile, get_object_vars($controllerObject->getView()));

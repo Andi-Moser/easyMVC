@@ -9,9 +9,21 @@ class itemController extends BaseController
      */
     public function listAction() {
         $this->view->items = [
-            "test" => 1,
-            "test2" => 2,
-            "test3" => 3
+            [
+                "id" => 1,
+                "count" => 2,
+                "name" => "Oranges"
+            ],
+            [
+                "id" => 2,
+                "count" => 1,
+                "name" => "Bottle of coca cola"
+            ],
+            [
+                "id" => 3,
+                "count" => 5,
+                "name" => "Apples"
+            ]
         ];
     }
 
