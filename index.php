@@ -5,6 +5,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// constants
+define('DIR', __DIR__);
+
 // load all classes
 include_once "autoload.php";
 
