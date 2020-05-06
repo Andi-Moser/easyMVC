@@ -8,23 +8,11 @@ class itemController extends BaseController
      * @Route("/item/list")
      */
     public function listAction() {
-        $this->view->items = [
-            [
-                "id" => 1,
-                "count" => 2,
-                "name" => "Oranges"
-            ],
-            [
-                "id" => 2,
-                "count" => 1,
-                "name" => "Bottle of coca cola"
-            ],
-            [
-                "id" => 3,
-                "count" => 5,
-                "name" => "Apples"
-            ]
-        ];
+        $model = new Item();
+
+        $items = $model->getItems();
+
+        $this->view->items = $items;
     }
 
     /**

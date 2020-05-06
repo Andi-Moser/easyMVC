@@ -30,7 +30,7 @@
                     ?>
                     <tr>
                         <td><?php echo $item['id'] ?></td>
-                        <td><?php echo $item['count'] ?></td>
+                        <td><?php echo $item['amount'] ?></td>
                         <td><?php echo $item['name'] ?></td>
                         <td><a href="/edit?id=<?php echo $item['id'] ?>" class="btn btn-info">Bearbeiten</a></td>
                         <td><a href="/delete?id=<?php echo $item['id'] ?>" class="btn btn-danger">X</a></td>
